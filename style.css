@@ -1,0 +1,308 @@
+/* Modern Professional UI Design */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header Section */
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Score Display */
+.score-display {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.score-display p {
+  background: rgba(255,255,255,0.95);
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a5568;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0;
+}
+
+.score-display span {
+  color: #667eea;
+  font-weight: 700;
+}
+
+/* Game Section Layout */
+.game-section {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+/* Puzzle Box Styling */
+.puzzle-box {
+  flex: 0 0 auto;
+  min-width: 400px;
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.puzzle-box p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.puzzle-box strong {
+  color: #4a5568;
+}
+
+#array-display {
+  font-family: 'Courier New', monospace;
+  background: #f7fafc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #2b6cb0;
+  font-weight: 600;
+  border: 2px solid #e2e8f0;
+}
+
+/* Options Buttons */
+.options {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.options button {
+  flex: 1;
+  min-width: 120px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.options button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.options button:active {
+  transform: translateY(0);
+}
+
+/* Feedback Styling */
+#feedback {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 20px 0;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 20px;
+}
+
+/* Next Puzzle Button */
+.puzzle-box > button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.puzzle-box > button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.6);
+}
+
+/* Code Editor Styling */
+.code-editor {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  resize: horizontal;
+  overflow: auto;
+  min-width: 300px;
+  max-width: 80vw;
+}
+
+.code-editor::-webkit-resizer {
+  background: linear-gradient(135deg, #f60a0a 0%, #764ba2 100%);
+  border-radius: 10px 10px 90px 90px;
+}
+
+.code-editor h2 {
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+textarea {
+  width: 100%;
+  height: 320px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  padding: 20px;
+  background: #1a202c;
+  color: #ffffff83;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Editor Controls */
+.editor-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.editor-controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editor-controls button:first-child {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.editor-controls button:last-child {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4);
+}
+
+.editor-controls button:hover {
+  transform: translateY(-2px);
+}
+
+.error-msg {
+  color: #e53e3e;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Leaderboard Styling */
+#leaderboard {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: rgba(26, 32, 44, 0.95);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  min-width: 250px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+#leaderboard h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.3rem;
+  color: #ffd700;
+  text-align: center;
+}
+
+#leaderboard ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#leaderboard li {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+#leaderboard li:first-child {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a202c;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .options {
+    flex-direction: column;
+  }
+  
+  .options button {
+    min-width: auto;
+  }
+  
+  #leaderboard {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}

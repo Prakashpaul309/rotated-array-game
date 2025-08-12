@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotated Array Puzzle Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="leaderboard">
+  <h2>Leaderboard</h2>
+  <ol id="leaderboard-list"></ol>
+</div>
+
+  <div class="container">
+    <h1>🧠 Rotated Array Puzzle</h1>
+    <div class="score-display">
+      <p><strong>Current Score:</strong> <span id="current-score">0</span> points</p>
+    </div>
+    <div class="game-section">
+      <div class="puzzle-box">
+        <p><strong>Array:</strong> <span id="array-display"></span></p>
+        <div class="options">
+          <button onclick="submitAnswer('sorted')">Sorted</button>
+          <button onclick="submitAnswer('rotated')">Rotated Ascending</button>
+          <button onclick="submitAnswer('none')">None</button>
+        </div>
+        <p id="feedback"></p>
+        <button onclick="nextPuzzle()">🔄 Next Puzzle</button>
+      </div>
+
+      <div class="code-editor">
+        <h2>🛠️ Custom Logic</h2>
+        <textarea id="code-editor" class="resizable-editor" spellcheck="false">
+// isSorted checks if array is sorted
+function isSorted(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < arr[i - 1]) return false;
+  }
+  return true;
+}
+
+// isRotatedAscending checks if array is rotated sorted
+function isRotatedAscending(arr) {
+  let count = 0;
+  let n = arr.length;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > arr[(i + 1) % n]) {
+      count++;
+    }
+  }
+  return count === 1;
+}
+        </textarea>
+        <div class="editor-controls">
+          <button onclick="applyCustomLogic()">✅ Apply Code</button>
+          <button onclick="resetCode()">♻️ Reset Code</button>
+          <p id="code-error" class="error-msg"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
